@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.icons {
+cursor: pointer;
+
+}
+.delete-btn {
+    color:#dc3545;
+}
+.update-btn {
+    color: #ffc107;
+}
+
+ 
