@@ -5,7 +5,7 @@ const submit = document.getElementById('submit');
 const tbody = document.getElementById('tbody');
 
 // vars
-let phones = localStorage.phones ? JSON.parse(localStorage.phones) : [];
+let phones = JSON.parse(localStorage.getItem('phones')) || [];
 let tmpIndex;
 let mood = 'create';
 
@@ -16,15 +16,16 @@ submit.onclick = () => {
         title: title.value,
         price: price.value
     };
+   
     if (mood === 'create') {
         phones.push(newPhone);
     } else {
-        phones[tmp] = newPhone;
+        phones[tmpIndex] = newPhone;
         mood = 'create';
         submit.innerHTML = 'create';
     }
 localStorage.setItem('phones', JSON.stringify(phones));
-    console.log(phones);
+   
      clearInputes();
     showData();
   
